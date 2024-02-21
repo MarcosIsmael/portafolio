@@ -1,8 +1,7 @@
 import { Box } from '@mui/material';
 import { styled } from '@mui/system';
-import { FC } from 'react';
 
-const StyledTriangulo = styled(Box)(({ theme }) => ({
+export const MarcoSuperiorComponent = styled(Box)(({}) => ({
   width: 0,
   height: 0,
   position: 'absolute',
@@ -26,8 +25,3 @@ const StyledTriangulo = styled(Box)(({ theme }) => ({
     transition: 'background 0.3s ease',
   },
 }));
-const TrianguloSuperiorComponent = () => {
-  return <StyledTriangulo />;
-};
-
-export default TrianguloSuperiorComponent;

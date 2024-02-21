@@ -1,7 +1,7 @@
 import { Box } from '@mui/material';
 import { styled } from '@mui/system';
 
-const StyledTriangulo = styled(Box)(({ theme }) => ({
+export const MarcoInferiorComponent = styled(Box)(({}) => ({
   width: 0,
   height: 0,
   position: 'absolute',
@@ -25,9 +25,3 @@ const StyledTriangulo = styled(Box)(({ theme }) => ({
     transition: 'background 0.3s ease',
   },
 }));
-
-const TrianguloInferiorComponent = () => {
-  return <StyledTriangulo />;
-};
-
-export default TrianguloInferiorComponent;
