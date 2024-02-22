@@ -1,5 +1,6 @@
 import { Box, Grid, Typography } from '@mui/material';
 import React, { FC, ReactNode } from 'react';
+import { ContenedorComponent, MarcoSuperiorComponent } from '../index';
 
 interface Props {
   title?: string;
@@ -10,8 +11,18 @@ export const ContenidoComponent: FC<Props> = ({ title, children, subTitle }) => 
   return (
     <Grid container flexDirection={'row'}>
       <Grid item sm={1} />
-      <Grid item xs pt={5}>
-        <Typography variant={subTitle ? 'h3' : 'h1'} color={'primary'}>
+      <Grid item xs>
+        <Typography
+          variant={subTitle ? 'h3' : 'h1'}
+          color={'primary'}
+          sx={{
+            marginTop: theme =>
+              theme.breakpoints.down('sm') ? theme.spacing(2) : theme.spacing(5),
+            marginBottom: theme =>
+              theme.breakpoints.down('sm') ? theme.spacing(2) : theme.spacing(5),
+            width: theme => (theme.breakpoints.down('sm') ? '55%' : '100%'),
+          }}
+        >
           {subTitle ? subTitle : title}
         </Typography>
         <Grid container flexDirection={'row'} spacing={2} pt={1}>
@@ -32,7 +43,17 @@ export const ContenidoComponent: FC<Props> = ({ title, children, subTitle }) => 
               {children}
             </Box>
           </Grid>
-          <Grid item xs={12} sm={5}>
+          <Grid
+            item
+            sm={5}
+            sx={{
+              marginTop: theme =>
+                theme.breakpoints.down('sm') ? theme.spacing(-10) : theme.spacing(8),
+            }}
+          >
+            <Box position={'relative'}>
+              <MarcoSuperiorComponent size='small' />
+            </Box>
             otro
           </Grid>
         </Grid>

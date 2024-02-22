@@ -15,7 +15,7 @@ function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <MarcoSuperiorComponent />
+        <MarcoSuperiorComponent size='large' />
         <MarcoInferiorComponent />
         <ContenedorComponent>
           <NavBarComponent />

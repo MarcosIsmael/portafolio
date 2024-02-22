@@ -1,7 +1,10 @@
-import { Box } from '@mui/material';
+import { Box, BoxProps } from '@mui/material';
 import { styled } from '@mui/system';
 
-export const MarcoSuperiorComponent = styled(Box)(({}) => ({
+interface Props extends BoxProps {
+  size: 'small' | 'large';
+}
+export const MarcoSuperiorComponent = styled(Box)<Props>(({ size }) => ({
   width: 0,
   height: 0,
   position: 'absolute',
@@ -15,8 +18,8 @@ export const MarcoSuperiorComponent = styled(Box)(({}) => ({
   },
   '&::before': {
     content: "''",
-    width: '300px',
-    height: '300px',
+    width: size === 'small' ? '150px' : '300px',
+    height: size === 'small' ? '150px' : '300px',
     position: 'absolute',
     top: '20px',
     left: '20px',
