@@ -1,8 +1,9 @@
-import { AppBar, Grid, IconButton } from '@mui/material';
+import { AppBar, Grid, Hidden, IconButton } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import MailIcon from '@mui/icons-material/Mail';
 import SaveAltIcon from '@mui/icons-material/SaveAlt';
 import TrackChangesIcon from '@mui/icons-material/TrackChanges';
+import MenuIcon from '@mui/icons-material/Menu';
 export const NavBarComponent = () => {
   return (
     <AppBar
@@ -12,7 +13,7 @@ export const NavBarComponent = () => {
       elevation={0}
       sx={{ height: '100px' }}
     >
-      <Grid container direction={'row'} height={'100px'}>
+      <Grid container direction={'row'} height={'100px'} spacing={3}>
         <Grid item xs={3} sm={2} justifyContent={'center'} display={'flex'} alignItems={'flex-end'}>
           <IconButton color='inherit' aria-label='open drawer' edge='start'>
             <TrackChangesIcon
@@ -30,7 +31,7 @@ export const NavBarComponent = () => {
           </IconButton>
         </Grid>
         <Grid item xs />
-        <Grid item xs={3} sm={0.5} justifyContent={'center'} display={'flex'}>
+        <Grid item xs={1.5} sm={0.5} justifyContent={'center'} display={'flex'}>
           <IconButton color='inherit' aria-label='open drawer' edge='start'>
             <MailIcon
               color='primary'
@@ -45,7 +46,7 @@ export const NavBarComponent = () => {
             />
           </IconButton>
         </Grid>
-        <Grid item xs={3} sm={0.5} justifyContent={'center'} display={'flex'}>
+        <Grid item xs={1.5} sm={0.5} justifyContent={'center'} display={'flex'}>
           <IconButton color='inherit' aria-label='open drawer' edge='start'>
             <GitHubIcon
               color='primary'
@@ -60,7 +61,7 @@ export const NavBarComponent = () => {
             />
           </IconButton>
         </Grid>
-        <Grid item xs={3} sm={0.5} justifyContent={'center'} display={'flex'}>
+        <Grid item xs={1.5} sm={0.5} justifyContent={'center'} display={'flex'}>
           <IconButton color='inherit' aria-label='open drawer' edge='start'>
             <SaveAltIcon
               color='primary'
@@ -75,6 +76,24 @@ export const NavBarComponent = () => {
             />
           </IconButton>
         </Grid>
+
+        <Hidden smUp>
+          <Grid item xs={1} sm={0.5} justifyContent={'center'} display={'flex'}>
+            <IconButton color='inherit' aria-label='open drawer' edge='start'>
+              <MenuIcon
+                color='primary'
+                sx={{
+                  '&:hover': {
+                    color: 'blue',
+                    fontSize: '40px',
+                    backgroundColor: theme => theme.palette.background.default,
+                  },
+                  transition: 'font-size 0.3s ease-in-out',
+                }}
+              />
+            </IconButton>
+          </Grid>
+        </Hidden>
       </Grid>
     </AppBar>
   );

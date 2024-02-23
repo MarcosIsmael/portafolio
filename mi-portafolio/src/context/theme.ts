@@ -18,6 +18,6 @@ export const theme = createTheme({
       dark: '#87d2eb',
     },
 
-    background: { default: '1d1d20' },
+    background: { default: '#1d1d20' },
   },
 });

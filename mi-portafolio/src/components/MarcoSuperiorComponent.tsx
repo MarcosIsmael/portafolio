@@ -26,5 +26,6 @@ export const MarcoSuperiorComponent = styled(Box)<Props>(({ size }) => ({
     background: 'linear-gradient(to top left, yellow, lightblue)',
     clipPath: 'polygon(0 0, 100% 0, 0 100%)',
     transition: 'background 0.3s ease',
+    borderTopLeftRadius: '8px',
   },
 }));

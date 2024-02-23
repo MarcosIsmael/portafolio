@@ -8,6 +8,7 @@ export const ContenedorComponent: FC<Props> = ({ children }) => {
     <Box
       sx={{
         width: '94%',
+        minWidth: '300px',
         height: '88%',
         backgroundColor: '#1d1d20',
         position: 'absolute',
@@ -16,6 +17,7 @@ export const ContenedorComponent: FC<Props> = ({ children }) => {
         transform: 'translate(-50%, -50%)',
         display: 'flex',
         flexDirection: 'column',
+        alignItems: 'center',
       }}
     >
       {children}

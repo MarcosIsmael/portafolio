@@ -1,6 +1,6 @@
-import { Box, Grid, Typography } from '@mui/material';
-import React, { FC, ReactNode } from 'react';
-import { ContenedorComponent, MarcoSuperiorComponent } from '../index';
+import { Box, Grid, Hidden, Typography } from '@mui/material';
+import { FC, ReactNode } from 'react';
+import { MarcoSuperiorComponent } from '../index';
 
 interface Props {
   title?: string;
@@ -9,7 +9,7 @@ interface Props {
 }
 export const ContenidoComponent: FC<Props> = ({ title, children, subTitle }) => {
   return (
-    <Grid container flexDirection={'row'}>
+    <Grid container flexDirection={'row'} sx={{ height: '200px' }}>
       <Grid item sm={1} />
       <Grid item xs>
         <Typography
@@ -20,6 +20,7 @@ export const ContenidoComponent: FC<Props> = ({ title, children, subTitle }) => 
               theme.breakpoints.down('sm') ? theme.spacing(2) : theme.spacing(5),
             marginBottom: theme =>
               theme.breakpoints.down('sm') ? theme.spacing(2) : theme.spacing(5),
+
             width: theme => (theme.breakpoints.down('sm') ? '55%' : '100%'),
           }}
         >
@@ -38,23 +39,44 @@ export const ContenidoComponent: FC<Props> = ({ title, children, subTitle }) => 
               }}
             />
           </Grid>
-          <Grid item xs={10} sm={6}>
+          <Grid item xs={10} sm={7}>
             <Box display={'flex'} gap={1} flexDirection={'column'}>
               {children}
             </Box>
           </Grid>
           <Grid
             item
-            sm={5}
-            sx={{
-              marginTop: theme =>
-                theme.breakpoints.down('sm') ? theme.spacing(-10) : theme.spacing(8),
-            }}
+            xs={12}
+            sm={4}
+            md={4}
+            sx={theme => ({
+              marginTop: theme.spacing(-15),
+              [theme.breakpoints.down('sm')]: {
+                marginTop: theme.spacing(2),
+              },
+            })}
           >
-            <Box position={'relative'}>
-              <MarcoSuperiorComponent size='small' />
-            </Box>
-            otro
+            <Hidden smDown>
+              <Typography variant='h5' pl={3} color={'primary'}>
+                Proyects
+              </Typography>
+              <Box position={'relative'}>
+                <MarcoSuperiorComponent size='small' />
+                <Box
+                  position={'absolute'}
+                  width={'200px'}
+                  height={'200px'}
+                  bgcolor={theme => theme.palette.background.default}
+                  sx={{
+                    borderTopLeftRadius: '8px',
+                  }}
+                  ml={3}
+                  mt={3}
+                >
+                  otro
+                </Box>
+              </Box>
+            </Hidden>
           </Grid>
         </Grid>
       </Grid>

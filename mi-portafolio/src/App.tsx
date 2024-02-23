@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material';
+import { Hidden, Typography } from '@mui/material';
 
 import './App.css';
 import {
@@ -16,7 +16,9 @@ function App() {
     <>
       <ThemeProvider theme={theme}>
         <MarcoSuperiorComponent size='large' />
-        <MarcoInferiorComponent />
+        <Hidden smDown>
+          <MarcoInferiorComponent />
+        </Hidden>
         <ContenedorComponent>
           <NavBarComponent />
           <ContenidoComponent title='Bienvenido'>
