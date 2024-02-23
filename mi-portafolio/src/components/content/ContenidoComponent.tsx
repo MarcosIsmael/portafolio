@@ -2,11 +2,15 @@ import { Box, Grid, Hidden, Typography } from '@mui/material';
 import { FC, ReactNode } from 'react';
 import { MarcoSuperiorComponent } from '../index';
 
+import { ListMenuComponent } from '../listMenu';
+import ColorPickerComponent from '../ColorPickerComponent';
+
 interface Props {
   title?: string;
   children: ReactNode | ReactNode[];
   subTitle?: string;
 }
+
 export const ContenidoComponent: FC<Props> = ({ title, children, subTitle }) => {
   return (
     <Grid container flexDirection={'row'} sx={{ height: '200px' }}>
@@ -73,7 +77,11 @@ export const ContenidoComponent: FC<Props> = ({ title, children, subTitle }) => 
                   ml={3}
                   mt={3}
                 >
-                  otro
+                  <ListMenuComponent />
+                  <ColorPickerComponent
+                    onColorChange1={color => console.log('color1', color)}
+                    onColorChange2={color => console.log('color2', color)}
+                  ></ColorPickerComponent>
                 </Box>
               </Box>
             </Hidden>

@@ -4,6 +4,7 @@ import MailIcon from '@mui/icons-material/Mail';
 import SaveAltIcon from '@mui/icons-material/SaveAlt';
 import TrackChangesIcon from '@mui/icons-material/TrackChanges';
 import MenuIcon from '@mui/icons-material/Menu';
+import { ChangeColorComponent } from '../color';
 export const NavBarComponent = () => {
   return (
     <AppBar
@@ -11,10 +12,10 @@ export const NavBarComponent = () => {
       color='transparent'
       position='sticky'
       elevation={0}
-      sx={{ height: '100px' }}
+      sx={{ height: '100px', pl: 1, pr: 1 }}
     >
       <Grid container direction={'row'} height={'100px'} spacing={3}>
-        <Grid item xs={3} sm={2} justifyContent={'center'} display={'flex'} alignItems={'flex-end'}>
+        <Grid item xs={5} sm={2} justifyContent={'center'} display={'flex'} alignItems={'flex-end'}>
           <IconButton color='inherit' aria-label='open drawer' edge='start'>
             <TrackChangesIcon
               color='primary'
@@ -31,6 +32,9 @@ export const NavBarComponent = () => {
           </IconButton>
         </Grid>
         <Grid item xs />
+        <Grid item xs={1.5} sm={1} justifyContent={'center'} display={'flex'}>
+          <ChangeColorComponent></ChangeColorComponent>
+        </Grid>
         <Grid item xs={1.5} sm={0.5} justifyContent={'center'} display={'flex'}>
           <IconButton color='inherit' aria-label='open drawer' edge='start'>
             <MailIcon
