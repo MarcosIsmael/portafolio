@@ -1,5 +1,4 @@
-import { createTheme } from '@mui/material';
-export const theme = createTheme({
+export const theme = {
   typography: {
     fontFamily: 'Montserrat-Regular',
     h1: {
@@ -20,4 +19,4 @@ export const theme = createTheme({
 
     background: { default: '#1d1d20' },
   },
-});
+};
